@@ -1,16 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Roboto Serif";
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url("/fonts/RobotoSerif.woff2") format("woff2-variations");
+}
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  scroll-behavior: smooth;
+  font-family: Roboto Serif, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.light-mode {
+  /* use just channel values so tailwind can adjust opacity */
+  --background: 245, 245, 245;
+  --border-color: 219, 219, 219;
+  --card-bg-color: 255, 255, 255;
+  --copy-primary: 23, 23, 23;
+  --copy-secondary: 115, 115, 115;
+  --cta: 139, 92, 246;
+  --cta-active: 124, 58, 237;
+  --cta-text: 255, 255, 255;
+}
+
+.dark-mode {
+  --background: 0, 0, 0;
+  --border-color: 0, 0, 0;
+  --card-bg-color: 23, 23, 23;
+  --copy-primary: 255, 255, 255;
+  --copy-secondary: 115, 115, 115;
+  --cta: 139, 92, 246;
+  --cta-active: 124, 58, 237;
+  --cta-text: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: 0, 0, 0;
+    --border-color: 0, 0, 0;
+    --card-bg-color: 23, 23, 23;
+    --copy-primary: 255, 255, 255;
+    --copy-secondary: 115, 115, 115;
+    --cta: 139, 92, 246;
+    --cta-active: 124, 58, 237;
+    --cta-text: 255, 255, 255;
+  }
 }
 
 a {
@@ -35,6 +80,14 @@ h1 {
   line-height: 1.1;
 }
 
+.quote-container {
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+.quote-container.fade-out {
+  opacity: 0;
+}
+
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -57,7 +110,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: rgb(250, 249, 246);
   }
   a:hover {
     color: #747bff;
@@ -65,4 +118,26 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #fff;
+    background-color: rgb(0, 0, 0);
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+input {
+  padding: 0.5rem;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  background-color: var(--input-bg-color);
+  color: var(--text-primary);
 }
