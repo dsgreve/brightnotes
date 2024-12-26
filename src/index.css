@@ -25,7 +25,7 @@
 .light-mode {
   /* use just channel values so tailwind can adjust opacity */
   --background: 245, 245, 245;
-  --border-color: 219, 219, 219;
+  --border-color: 0, 0, 0;
   --card-bg-color: 255, 255, 255;
   --copy-primary: 23, 23, 23;
   --copy-secondary: 115, 115, 115;
@@ -36,7 +36,7 @@
 
 .dark-mode {
   --background: 0, 0, 0;
-  --border-color: 0, 0, 0;
+  --border-color: 219, 219, 219;
   --card-bg-color: 23, 23, 23;
   --copy-primary: 255, 255, 255;
   --copy-secondary: 115, 115, 115;
@@ -140,4 +140,10 @@ input {
   border: 1px solid var(--border-color);
   background-color: var(--input-bg-color);
   color: var(--text-primary);
+}
+
+.circle {
+  background-color: var(--background);
+  border: 2px solid var(--border-color);
+  border-radius: 100%;
 }
