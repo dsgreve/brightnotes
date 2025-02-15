@@ -31,7 +31,7 @@ function ThemeBtn() {
 
   return (
     <div className="theme-toggle-container">
-      <label className="text-copy-primary text-sm relative inline-flex items-center cursor-pointer">{theme === 'light' ? 'View in Dark Mode' : 'View in Light Mode' }</label>
+      <label className="text-copy-primary text-sm relative inline-flex items-center cursor-pointer">{theme === 'light' ? 'Dark Mode' : 'Light Mode' }</label>
       <Switch checked={theme === 'light'} onChange={handleChange} />
     </div>
   );

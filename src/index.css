@@ -16,6 +16,13 @@
   line-height: 1.5;
   font-weight: 400;
 
+  --primary-one: 234, 189, 192;
+  --primary-two: 221, 228, 241;
+  --neutral-one: 255, 244, 238;
+  --neutral-two: 246, 237, 236;
+  --accent: 126, 171, 172;
+  --copy-primary: 107, 105, 102;
+
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -24,6 +31,13 @@
 
 .light-mode {
   /* use just channel values so tailwind can adjust opacity */
+  --primary-one: 234, 189, 192;
+  --primary-two: 221, 228, 241;
+  --neutral-one: 255, 244, 238;
+  --neutral-two: 246, 237, 236;
+  --accent: 126, 171, 172;
+  --copy-primary: 107, 105, 102;
+
   --background: 245, 245, 245;
   --border-color: 0, 0, 0;
   --card-bg-color: 255, 255, 255;
@@ -146,4 +160,26 @@ input {
   background-color: var(--background);
   border: 2px solid var(--border-color);
   border-radius: 100%;
+}
+
+.animate-subtle-circle {
+  animation: subtle-circle 5s infinite ease-in-out;
+}
+
+@keyframes subtle-circle {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(10px, -10px);
+  }
+  50% {
+    transform: translate(20px, 0);
+  }
+  75% {
+    transform: translate(10px, 10px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }

@@ -1,23 +1,24 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ThemeBtn from './components/ThemeSwitch/ThemeBtn';
-import BookCount from './components/BookCount';
+import Intro from './components/Intro';
 import BookHighlight from './components/BookHighlight';
 import './App.css';
-import QuoteCount from './components/quoteCount';
 
 function App() {
-
+  const [showIntro, setShowIntro] = useState(true);
+  const handleToggle = () => {
+    setShowIntro(!showIntro);
+  }
   return (
-    <div className='background'>
+    <div className="bg-gradient-primary h-full flex flex-col justify-between">
       <ThemeBtn />
-      <div className='flex justify-center items-center my-14'>
-        <BookCount />
-        <QuoteCount />
-      </div>
-      <div>
-        <h1 className="mb-8 text-copy-primary">Highlights</h1>
-        <BookHighlight />
-      </div>
+      {showIntro ? <Intro /> : <BookHighlight />}
+      <button
+          onClick={handleToggle}
+          className="p-2 bg-cta text-white rounded"
+        >
+          {showIntro ? 'Show Highlights' : 'Show Intro'}
+        </button>
     </div>
   );
 }
