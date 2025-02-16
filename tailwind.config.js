@@ -4,7 +4,6 @@ export default {
   theme: {
     extend: {
       colors: {
-        grape: "rgba(114, 46, 204, <alpha-value>)",
         "primary-one": "rgba(var(--primary-one), <alpha-value>)",
         "primary-two": "rgba(var(--primary-two), <alpha-value>)",
         "neutral-one": "rgba(var(--neutral-one), <alpha-value>)",

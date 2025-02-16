@@ -11,14 +11,18 @@ function App() {
   }
   return (
     <div className="bg-gradient-primary h-full flex flex-col justify-between">
-      <ThemeBtn />
-      {showIntro ? <Intro /> : <BookHighlight />}
-      <button
+      <div flex-none><ThemeBtn /></div>
+      <div flex-grow>
+        {showIntro ? <Intro /> : <BookHighlight />}
+      </div>
+      <div flex-none>
+        <button
           onClick={handleToggle}
-          className="p-2 bg-cta text-white rounded"
+          className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-md border border-neutral-200 bg-transparent px-6 font-medium text-neutral-600 transition-all [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"
         >
-          {showIntro ? 'Show Highlights' : 'Show Intro'}
+          {showIntro ? 'Read Notes' : 'Back to Intro'}
         </button>
+      </div>
     </div>
   );
 }
