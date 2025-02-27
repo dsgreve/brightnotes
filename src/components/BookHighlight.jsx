@@ -34,7 +34,7 @@ function BookHighlight() {
         </div>
         <div className="basis-2/3 h-100 mb-auto text-left">
           <h2
-            className="font-extrabold text-2xl mb-4 text-copy-primary"
+            className="font-semibold text-2xl mb-4 text-copy-primary"
             dangerouslySetInnerHTML={{ __html: bookHighlight.Title }}
           ></h2>
           <p className="text-xl mb-4 text-copy-primary">{bookHighlight.Author}</p>
