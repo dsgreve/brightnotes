@@ -30,11 +30,10 @@
   font-display: swap;
 }
 
-woff2-variations #root {
+#root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  padding: 0 1rem;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -51,7 +50,7 @@ woff2-variations #root {
   --neutral-one: 255, 244, 238;
   --neutral-two: 246, 237, 236;
   --accent: 126, 171, 172;
-  --copy-primary: 107, 105, 102;
+  --copy-primary: 54, 69, 79;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -66,16 +65,7 @@ woff2-variations #root {
   --neutral-one: 255, 244, 238;
   --neutral-two: 246, 237, 236;
   --accent: 126, 171, 172;
-  --copy-primary: 107, 105, 102;
-
-  --background: 245, 245, 245;
-  --border-color: 0, 0, 0;
-  --card-bg-color: 255, 255, 255;
-  --copy-primary: 23, 23, 23;
-  --copy-secondary: 115, 115, 115;
-  --cta: 139, 92, 246;
-  --cta-active: 124, 58, 237;
-  --cta-text: 255, 255, 255;
+  --copy-primary: 54, 69, 79;
 }
 
 .dark-mode {
@@ -84,27 +74,17 @@ woff2-variations #root {
   --neutral-one: 106, 30, 85;
   --neutral-two: 166, 77, 121;
   --accent: 255, 118, 206;
-
-  --background: 0, 0, 0;
-  --border-color: 219, 219, 219;
-  --card-bg-color: 23, 23, 23;
   --copy-primary: 255, 255, 255;
-  --copy-secondary: 115, 115, 115;
-  --cta: 139, 92, 246;
-  --cta-active: 124, 58, 237;
-  --cta-text: 255, 255, 255;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: 0, 0, 0;
-    --border-color: 0, 0, 0;
-    --card-bg-color: 23, 23, 23;
+    --primary-one: 26, 26, 29;
+    --primary-two: 59, 28, 50;
+    --neutral-one: 106, 30, 85;
+    --neutral-two: 166, 77, 121;
+    --accent: 255, 118, 206;
     --copy-primary: 255, 255, 255;
-    --copy-secondary: 115, 115, 115;
-    --cta: 139, 92, 246;
-    --cta-active: 124, 58, 237;
-    --cta-text: 255, 255, 255;
   }
 }
 

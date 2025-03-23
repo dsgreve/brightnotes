@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import data from "../data/highlights.json";
-import '../App.css';
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 function BookHighlight() {
   const [bookHighlight, setBookHighlight] = useState(null);
@@ -34,15 +34,14 @@ function BookHighlight() {
         </div>
         <div className="basis-2/3 h-100 mb-auto text-left">
           <h2
-            className="font-semibold text-2xl mb-4 text-copy-primary"
+            className="font-semibold text-xl mb-4 text-copy-primary"
             dangerouslySetInnerHTML={{ __html: bookHighlight.Title }}
           ></h2>
           <p className="text-xl mb-4 text-copy-primary">{bookHighlight.Author}</p>
-          <p className="text-2xl mb-4 text-copy-primary" >{bookHighlight["Highlight Text"]}</p>
+          <p className="text-lg mb-4 text-copy-primary" >{bookHighlight["Highlight Text"]}</p>
           <div className="flex justify-center md:justify-start my-6 ">
-            <button onClick={loadRandomHighlight} className="group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg border border-accent bg-accent/30 px-6 font-sans font-semibold text-copy-primary transition-all [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none">
-            New Note
-          </button>
+            <button onClick={loadRandomHighlight} className="ml-4 group relative inline-flex h-12 items-center justify-center overflow-hidden rounded-lg border border-accent bg-accent/30 px-6 font-sans font-semibold text-copy-primary transition-all [box-shadow:0px_4px_1px_#a3a3a3] active:translate-y-[2px] active:shadow-none"><ArrowForwardIcon className="ml-2" />
+            </button>
           </div>
         </div>
       </div>

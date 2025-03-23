@@ -31,8 +31,16 @@ function ThemeBtn() {
 
   return (
     <div className="theme-toggle-container">
-      <label className="text-copy-primary text-sm relative inline-flex items-center cursor-pointer">{theme === 'light' ? 'Dark Mode' : 'Light Mode' }</label>
-      <Switch checked={theme === 'light'} onChange={handleChange} />
+      <label className="sr-only">{theme === 'light' ? 'Dark Mode' : 'Light Mode' }</label>
+      <Switch
+        checked={theme === 'light'}
+        onChange={handleChange}
+        sx={{
+          '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
+            backgroundColor: 'rgb(126, 171, 172)',
+          },
+        }}
+      />
     </div>
   );
 }
