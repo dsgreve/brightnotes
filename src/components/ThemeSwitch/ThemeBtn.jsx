@@ -1,39 +1,27 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Switch } from '@mui/material';
 import useLocalStorage from './UseLocalStorage';
 
 function ThemeBtn() {
   const [theme, setTheme] = useLocalStorage('theme', 'light');
-  console.log(theme);
-  const handleChange = () => {
-    const newTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(newTheme);
-    if (newTheme === 'dark') {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-    }
-  };
+  const isDark = theme === 'dark';
 
-  // Apply the initial theme based on the stored value
+  // The body class is the single source of truth for the active theme;
+  // index.css lets it override the prefers-color-scheme default.
   useEffect(() => {
-    if (theme === 'dark') {
-      document.body.classList.add('dark-mode');
-      document.body.classList.remove('light-mode');
-    } else {
-      document.body.classList.add('light-mode');
-      document.body.classList.remove('dark-mode');
-    }
-  }, [theme]);
-  
+    document.body.classList.toggle('dark-mode', isDark);
+    document.body.classList.toggle('light-mode', !isDark);
+  }, [isDark]);
+
+  const handleChange = () => {
+    setTheme(isDark ? 'light' : 'dark');
+  };
 
   return (
     <div className="theme-toggle-container">
-      <label className="sr-only">{theme === 'light' ? 'Dark Mode' : 'Light Mode' }</label>
+      <label className="sr-only">{isDark ? 'Light Mode' : 'Dark Mode'}</label>
       <Switch
-        checked={theme === 'light'}
+        checked={isDark}
         onChange={handleChange}
         sx={{
           '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
