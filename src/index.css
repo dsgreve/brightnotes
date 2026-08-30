@@ -45,10 +45,10 @@
   line-height: 1.5;
   font-weight: 400;
 
-  --primary-one: 234, 189, 192;
-  --primary-two: 221, 228, 241;
-  --neutral-one: 255, 244, 238;
-  --neutral-two: 246, 237, 236;
+  --primary-one: 245, 245, 244;
+  --primary-two: 244, 240, 224;
+  --neutral-one: 234, 189, 192;
+  --neutral-two: 221, 228, 241;
   --accent: 126, 171, 172;
   --copy-primary: 54, 69, 79;
 
@@ -60,10 +60,10 @@
 
 .light-mode {
   /* use just channel values so tailwind can adjust opacity */
-  --primary-one: 234, 189, 192;
-  --primary-two: 221, 228, 241;
-  --neutral-one: 255, 244, 238;
-  --neutral-two: 246, 237, 236;
+  --primary-one: 245, 245, 244;
+  --primary-two: 244, 240, 224;
+  --neutral-one: 234, 189, 192;
+  --neutral-two: 221, 228, 241;
   --accent: 126, 171, 172;
   --copy-primary: 54, 69, 79;
 }
@@ -170,6 +170,21 @@ input {
   border: 1px solid var(--border-color);
   background-color: var(--input-bg-color);
   color: var(--text-primary);
+}
+
+.light-mode .MuiButtonBase-root.MuiSwitch-switchBase .MuiSwitch-thumb {
+  background-color: black;
+  background-image: url(public/icon-moon.svg);
+  background-position: 1px;
+  background-repeat: no-repeat;
+  background-size: 16px;
+}
+
+.dark-mode .MuiButtonBase-root.MuiSwitch-switchBase .MuiSwitch-thumb {
+  background-image: url(public/icon-sun.svg);
+  background-color: black;
+  background-size: 14px;
+  background-repeat: no-repeat;
 }
 
 .circle {

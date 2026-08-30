@@ -17,15 +17,15 @@ function App() {
   }
   return (
     <div className="h-screen flex flex-col justify-between overflow-auto px-4">
-      <div flex-none><ThemeBtn /></div>
-      <div flex-grow>
+      <div className="flex-none"><ThemeBtn /></div>
+      <div className="flex-grow">
         {showIntro ? <Intro /> : <BookHighlight />}
       </div>
-      <div flex-grow>
+      <div className="flex-grow">
         {showPallete && <ColorPallete />}
       </div>
       
-      <div flex-none>
+      <div className="flex-none">
           <ButtonRead handleToggle={handleToggle} showIntro={showIntro} />
           <ButtonPallete handleTogglePallete={handleTogglePallete} />
       </div>

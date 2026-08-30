@@ -37,7 +37,13 @@ function ThemeBtn() {
         onChange={handleChange}
         sx={{
           '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-track': {
-            backgroundColor: 'rgb(126, 171, 172)',
+            backgroundColor: 'rgb(234, 189, 192)',
+          '& .MuiSwitch-switchBase.Mui-checked + .MuiSwitch-thumb':  {
+            backgroundColor: 'rgb(234, 189, 192)',
+            },
+          },
+          '& .MuiSwitch-switchBase + .MuiSwitch-track': {
+            backgroundColor: 'rgb(200, 200, 200)',
           },
         }}
       />
