@@ -1,34 +1,16 @@
-import React, { useState } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import ThemeBtn from './components/ThemeSwitch/ThemeBtn';
-import Intro from './components/Intro';
-import BookHighlight from './components/BookHighlight';
-import ColorPallete from './components/ColorPallete';
-import ButtonPallete from './components/ButtonPallete';
-import ButtonRead from './components/ButtonRead';
+import Home from './components/Home';
+import FilterQuotes from './components/FilterQuotes';
 
 function App() {
-  const [showIntro, setShowIntro] = useState(true);
-  const [showPallete, setShowPallete] = useState(false)
-  const handleToggle = () => {
-    setShowIntro(!showIntro);
-  }
-  const handleTogglePallete = () => {
-    setShowPallete(!showPallete);
-  }
   return (
     <div className="h-screen flex flex-col justify-between overflow-auto px-4">
       <div className="flex-none"><ThemeBtn /></div>
-      <div className="flex-grow">
-        {showIntro ? <Intro /> : <BookHighlight />}
-      </div>
-      <div className="flex-grow">
-        {showPallete && <ColorPallete />}
-      </div>
-      
-      <div className="flex-none">
-          <ButtonRead handleToggle={handleToggle} showIntro={showIntro} />
-          <ButtonPallete handleTogglePallete={handleTogglePallete} />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/filter" element={<FilterQuotes />} />
+      </Routes>
     </div>
   );
 }
