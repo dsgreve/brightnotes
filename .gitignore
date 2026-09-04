@@ -12,6 +12,10 @@ dist
 dist-ssr
 *.local
 
+# Kindle importer: saved Amazon session + debug dumps
+scripts/.amazon-auth.json
+scripts/debug-*.html
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
