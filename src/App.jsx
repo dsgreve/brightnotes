@@ -5,8 +5,8 @@ import FilterQuotes from './components/FilterQuotes';
 
 function App() {
   return (
-    <div className="h-screen flex flex-col justify-between overflow-auto px-4">
-      <div className="flex-none"><ThemeBtn /></div>
+    <div className="app-frame">
+      <div className="theme-control"><ThemeBtn /></div>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/filter" element={<FilterQuotes />} />

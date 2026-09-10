@@ -20,22 +20,29 @@ function Home() {
   };
 
   return (
-    <div className="flex flex-col flex-grow justify-between">
-      <div className="flex-grow">
+    <main className="home-shell">
+      <div className="home-content">
         {showIntro ? <Intro /> : <BookHighlight />}
       </div>
-      <div className="flex-grow">
+      <div className="home-palette">
         {showPallete && <ColorPallete />}
       </div>
 
-      <div className="flex-none">
-        <ButtonRead handleToggle={handleToggle} showIntro={showIntro} />
-        <ButtonPallete handleTogglePallete={handleTogglePallete} />
-        <button onClick={() => navigate('/filter')} aria-label="Filter quotes">
+      <nav className="home-actions" aria-label="Library actions">
+        <ButtonRead
+          handleToggle={handleToggle}
+          showIntro={showIntro}
+          ariaLabel={showIntro ? 'Open a highlight' : 'Back to overview'}
+        />
+        <ButtonPallete
+          handleTogglePallete={handleTogglePallete}
+          ariaLabel={showPallete ? 'Hide palette' : 'Show palette'}
+        />
+        <button className="action-button" onClick={() => navigate('/filter')} aria-label="Filter quotes" title="Filter quotes">
           <FilterAltIcon />
         </button>
-      </div>
-    </div>
+      </nav>
+    </main>
   );
 }
 
